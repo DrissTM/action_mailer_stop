@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["adrien.siami@dimelo.com"]
   spec.description   = "Call 'stop!' from an ActionMailer class to abort the delivery of your email"
   spec.summary       = "Call 'stop!' from an ActionMailer class to abort the delivery of your email"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/dimelo/action_mailer_stop"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
