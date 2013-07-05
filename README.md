@@ -1,6 +1,7 @@
 # ActionMailerStop
 
-TODO: Write a gem description
+Sometimes, you want to simply abort the sending of an email, but at the last moment.
+With this gem, simply call ``stop!`` from anything inside an action mailer method, and relax.
 
 ## Installation
 
@@ -18,7 +19,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Given the following code :
+
+    def my_helper_method(params)
+      # Do stuff
+    end
+    
+    class MyMailer < ActionMailer::Base
+      def some_email
+        my_helper_methods(some_params)
+        mail :to => ...
+      end
+    end
+      
+Let's say you would like to stop the sending of the email in my_helper_method if the params are bad.
+
+### Step 1
+
+    def my_helper_method(params)
+      stop! if params.bad?
+      # Do stuff
+    end
+    
+### Step 2
+
+There is no step2.
 
 ## Contributing
 
